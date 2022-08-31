@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/normalize.css">
 
     <!-- Fontawesome Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -33,12 +33,12 @@
             <nav>
                 <i class="fas fa-align-justify"></i>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#landing" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="form">
                     <i class="fas fa-search"></i>
@@ -49,7 +49,7 @@
     <!-- End Header -->
 
     <!-- Start Landing -->
-    <div class="landing">
+    <div class="landing" id="landing">
         <div class="overlay"></div>
         <div class="text">
             <div class="content">
@@ -61,18 +61,22 @@
                     Mauris blandit aliquet elit, eget tincidunt.</p>
             </div>
         </div>
-        <i class="fas fa-angle-left change-backgroung fa-2x"></i>
-        <i class="fas fa-angle-right change-backgroung fa-2x"></i>
-        <ul class="bullets">
-            <li></li>
-            <li class="active"></li>
-            <li></li>
+        <button id="prev">
+            <i class="fas fa-angle-left change-backgroung fa-2x prev"></i>
+        </button>
+        <button id="next">
+            <i class="fas fa-angle-right change-backgroung fa-2x next"></i>
+        </button>
+        <ul class="bullets" id="bullets-ul">
+            <li data-index="1" class="active"></li>
+            <li data-index="2"></li>
+            <li data-index="3"></li>
         </ul>
     </div>
     <!-- End Landing -->
 
     <!-- Start Services -->
-    <div class="services">
+    <div class="services" id="services">
         <div class="container">
             <div class="min-heading">
                 <h2>SERVICES</h2>
@@ -133,7 +137,7 @@
     </div>
     <!-- End Design -->
     <!-- Start PORTFOLIO -->
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio">
         <div class="container">
             <div class="min-heading">
                 <h2>PORTFOLIO</h2>
@@ -141,72 +145,72 @@
                     tincidunt.</p>
             </div>
             <ul>
-                <li class="active">All</li>
-                <li>App</li>
-                <li>Photo</li>
-                <li>Wep</li>
-                <li>Print</li>
+                <li class="active" data-cat=".all">All</li>
+                <li data-cat=".a">App</li>
+                <li data-cat=".p">Photo</li>
+                <li data-cat=".w">Wep</li>
+                <li data-cat=".pr">Print</li>
             </ul>
         </div>
         <div class="imges-container">
-            <div class="box">
+            <div class="box all a">
                 <img src="Imgs/shuffle-01.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all a">
                 <img src="Imgs/shuffle-02.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all p">
                 <img src="Imgs/shuffle-03.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all pr p">
                 <img src="Imgs/shuffle-04.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all w">
                 <img src="Imgs/shuffle-05.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all w">
                 <img src="Imgs/shuffle-06.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all p a">
                 <img src="Imgs/shuffle-07.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <div class="box">
+            <div class="box all pr w">
                 <img src="Imgs/shuffle-08.jpg" alt="">
                 <div class="caption">
                     <h4>Awesome Imag</h4>
                     <p>Photography</p>
                 </div>
             </div>
-            <a href="#" class="more">More</a>
         </div>
+        <a href="#" class="more">More</a>
     </div>
     <!-- End PORTFOLIO -->
     <!-- START Video -->
@@ -220,7 +224,7 @@
     </div>
     <!-- End Video -->
     <!-- Start About -->
-    <div class="about">
+    <div class="about" id="about">
         <div class="container">
             <div class="min-heading">
                 <h2>ABOUT US</h2>
@@ -236,29 +240,29 @@
         <div class="container">
             <div class="box">
                 <i class="fas fa-mug-hot"></i>
-                <div class="number">1.236</div>
+                <div class="number" data-goal="936">0</div>
                 <p>Coffee Drinks</p>
             </div>
             <div class="box">
                 <i class="fas fa-folder"></i>
-                <div class="number">256</div>
+                <div class="number" data-goal="256">0</div>
                 <p>Completed Projects</p>
             </div>
             <div class="box">
                 <i class="fas fa-envelope"></i>
-                <div class="number">1,743</div>
+                <div class="number" data-goal="1243">0</div>
                 <p>Mail Sent</p>
             </div>
             <div class="box">
                 <i class="fas fa-trophy"></i>
-                <div class="number">17</div>
+                <div class="number" data-goal="17">0</div>
                 <p>Awards Received</p>
             </div>
         </div>
     </div>
     <!-- End Stats -->
     <!-- Start Skills -->
-    <div class="our-skills">
+    <div class="our-skills" id="skills">
         <div class="container">
             <div class="testimonials">
                 <h3>TESTIMONIALS</h3>
@@ -291,27 +295,27 @@
                 <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
                     tincidunt.</p>
                 <div class="prog-holder">
-                    <h4>ADOBE</h4>
-                    <div class="prog">
-                        <span style="width: 90%;" data-progress="90%"></span>
-                    </div>
-                </div>
-                <div class="prog-holder">
                     <h4>HTML &AMP; CSS</h4>
                     <div class="prog">
-                        <span style="width: 85%;" data-progress="85%"></span>
+                        <span style="width: 0;" data-progress="90%"></span>
                     </div>
                 </div>
                 <div class="prog-holder">
-                    <h4>JAVASCRIPT</h4>
+                    <h4>ADOBE</h4>
                     <div class="prog">
-                        <span style="width: 80%;" data-progress="80%"></span>
+                        <span style="width: 0;" data-progress="85%"></span>
+                    </div>
+                </div>
+                <div class="prog-holder">
+                    <h4>JavaScript</h4>
+                    <div class="prog">
+                        <span style="width: 0;" data-progress="80%"></span>
                     </div>
                 </div>
                 <div class="prog-holder">
                     <h4>PHP</h4>
                     <div class="prog">
-                        <span style="width: 90%;" data-progress="90%"></span>
+                        <span style="width: 0;" data-progress="50%"></span>
                     </div>
                 </div>
             </div>
@@ -327,7 +331,7 @@
     </div>
     <!-- End Quote -->
     <!-- Start Pricing -->
-    <div class="pricing">
+    <div class="pricing" id="pricing">
         <div class="container">
             <div class="min-heading">
                 <h2>PRICING</h2>
@@ -415,7 +419,7 @@
     </div>
     <!-- End Subscribe -->
     <!-- Start Contact -->
-    <div class="contact-us">
+    <div class="contact-us" id="contact">
         <div class="container">
             <div class="min-heading">
                 <h2>CONTACT US</h2>
@@ -448,15 +452,18 @@
             <img src="Imgs/logo.png" alt="logo">
             <p>WE ARE SOCIAL</p>
             <div class="social-icons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fas fa-home"></i>
-                <i class="fab fa-linkedin"></i>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"> <i class="fab fa-twitter-square"></i> </a>
+                <a href="#"> <i class="fas fa-home"></i></a>
+                <a href="#"> <i class="fab fa-linkedin"></i> </a>
             </div>
             <p class="copyright">&copy; 2021 <span>Kasper</span> All Right Reserved</p>
         </div>
     </div>
     <!-- End Footer -->
+    <div class="scroll-up"><span></span></div>
+    <script src="js-fills/all.min.js"></script>
+    <script src="js-fills/main.js"></script>
 </body>
 
 </html>

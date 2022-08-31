@@ -164,6 +164,7 @@ header nav ul {
         background-color: rgb(0 0 0 / 50%);
     }
 
+
     header nav .fa-align-justify:hover+ul li a {
         padding: 15px;
     }
@@ -177,6 +178,10 @@ header nav .fa-align-justify {
 @media (min-width:768px) {
     header nav .fa-align-justify {
         display: none;
+    }
+
+    header nav ul {
+        z-index: 9999999;
     }
 }
 
@@ -205,7 +210,7 @@ header nav .form {
     border-left: solid 1px white;
 }
 
-header nav .form i {
+header nav .form svg {
     color: white;
     position: absolute;
     top: 50%;
@@ -221,8 +226,9 @@ header nav .form i {
 
 .landing {
     min-height: 100vh;
-    background-image: url("../Imgs/landing.jpg");
+    /* background-image: url("../Imgs/landing.jpg"); */
     background-size: cover;
+    background-position: center;
     position: relative;
 }
 
@@ -246,6 +252,7 @@ header nav .form i {
     background-color: rgb(15 116 143 / 70%);
     display: flex;
     justify-content: flex-end;
+    z-index: 4;
 }
 
 @media (max-width:767px) {
@@ -287,13 +294,41 @@ header nav .form i {
     }
 }
 
-.landing .fa-angle-left {
+/* .landing .prev {
+    left: 15px;
+    padding: 10px 15px;
+
+}
+
+.landing .next {
+    right: 15px;
+} */
+
+#next,
+#prev {
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+}
+
+#next.disabled,
+#prev.disabled {
+    opacity: 0.5;
+    cursor: no-drop;
+}
+
+#next {
+    right: 30px;
+}
+
+#prev {
     left: 30px;
 }
 
-.landing .fa-angle-right {
-    right: 30px;
-}
 
 .landing .bullets {
     position: absolute;
@@ -309,6 +344,7 @@ header nav .form i {
     border: 1px solid white;
     border-radius: 50%;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .landing .bullets .active {
@@ -338,7 +374,7 @@ header nav .form i {
     display: flex;
 }
 
-.services .sev-box i {
+.services .sev-box svg {
     margin-right: 50px;
     font-size: 3em;
 }
@@ -351,7 +387,7 @@ header nav .form i {
         margin-bottom: 40px;
     }
 
-    .services .sev-box i {
+    .services .sev-box svg {
         margin: 0 0 40px 0;
     }
 }
@@ -460,7 +496,8 @@ header nav .form i {
 /* Start PORTFOLIO */
 
 .portfolio {
-    padding: var(--min-padding);
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .portfolio ul {
@@ -470,6 +507,12 @@ header nav .form i {
 
 .portfolio ul li {
     padding: 10px;
+    cursor: pointer;
+}
+
+.portfolio ul li:hover {
+    color: white;
+    background-color: var(--min-color);
 }
 
 .portfolio ul .active {
@@ -542,6 +585,7 @@ header nav .form i {
     text-decoration: none;
     text-transform: uppercase;
     display: block;
+    width: fit-content;
 }
 
 
@@ -679,7 +723,7 @@ header nav .form i {
     }
 }
 
-.stats .box i {
+.stats .box svg {
     width: 40px;
     height: 40px;
     display: flex;
@@ -814,6 +858,7 @@ header nav .form i {
     display: block;
     height: 100%;
     position: relative;
+    transition: 0.4s;
 }
 
 .our-skills .skills .prog span::before {
@@ -968,6 +1013,13 @@ header nav .form i {
     width: fit-content;
     text-decoration: none;
     margin: 30px auto;
+    transition: 0.3s;
+}
+
+.pricing .plans .plan .foot a:hover {
+    color: white;
+    background-color: var(--min-background-color);
+    border: none;
 }
 
 .pricing .contact-text {
@@ -985,8 +1037,12 @@ header nav .form i {
     width: fit-content;
     padding: 15px 30px;
     margin: 20px auto;
+    transition: 0.3s;
 }
 
+.pricing .contact-link:hover {
+    background-color: var(--min-background-color);
+}
 
 /* End Pricing */
 
@@ -1030,7 +1086,7 @@ header nav .form i {
     position: relative;
 }
 
-.subscribe .container form i {
+.subscribe .container form svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1054,6 +1110,11 @@ header nav .form i {
     text-transform: uppercase;
     padding: 10px 20px;
     border-left: none;
+}
+
+.subscribe form input[type="submit"]:hover {
+    background-color: var(--min-background-color);
+    border: none;
 }
 
 .subscribe form ::placeholder {
@@ -1128,6 +1189,10 @@ header nav .form i {
     cursor: pointer;
 }
 
+.contact-us .content form input[type="submit"]:hover {
+    background-color: var(--min-background-color);
+}
+
 .contact-us .content .info {
     flex-basis: 25%;
 }
@@ -1195,8 +1260,13 @@ header nav .form i {
     margin: 20px auto;
 }
 
-.footer .social-icons i {
+.footer .social-icons svg {
     padding: 10px 15px;
+    color: white;
+}
+
+.footer .social-icons svg:hover {
+    background-color: var(--min-background-color);
 }
 
 .footer .copyright {
@@ -1211,5 +1281,37 @@ header nav .form i {
 
 /* End Footer */
 
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 9999;
+    width: 35px;
+    height: 35px;
+}
+
+.scroll-up span {
+    background-color: var(--min-color);
+    transition: ease 0.3s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.scroll-up span:hover {
+    background-color: var(--min-background-color);
+}
+
+.scroll-up span::before {
+    font-family: "FontAwesome";
+    content: "\f077";
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+}
 
 /* The End */
